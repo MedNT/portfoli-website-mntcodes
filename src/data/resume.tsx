@@ -6,7 +6,7 @@ export const DATA = {
 	initials: "Med",
 	url: "https://mntcodes.com",
 	location: "Casablanca, Morocco",
-	locationLink: "https://www.google.com/maps/place/sanfrancisco",
+	locationLink: "https://www.google.com/maps/place/morocco",
 	description:
 		"I’m not just a Software Engineer—I’m a creator of digital experiences and a problem-solver at heart. ",
 	summary:
@@ -289,12 +289,12 @@ export const DATA = {
 			links: [
 				{
 					type: "Website",
-					href: "https://www.terminal.mntcodes.com",
+					href: "https://www.mntcodes.com",
 					icon: <Icons.globe className="size-3" />,
 				},
 				{
 					type: "Source",
-					href: "#",
+					href: "https://github.com/MedNT/portfoli-website-mntcodes",
 					icon: <Icons.github className="size-3" />,
 				},
 			],
@@ -318,7 +318,7 @@ export const DATA = {
 				},
 				{
 					type: "Source",
-					href: "#",
+					href: "https://github.com/MedNT/portfolio-minimalistic",
 					icon: <Icons.github className="size-3" />,
 				},
 			],
@@ -450,7 +450,13 @@ export const DATA = {
 				"Deep Learning",
 				"Computer Vision",
 			],
-			links: [],
+			links: [
+				{
+					type: "Hosting Soon...",
+					href: "#",
+					icon: <Icons.globe className="size-3" />,
+				}
+			],
 			image: "",
 			video: "videos/ai-insta.mp4",
 		},
@@ -472,7 +478,13 @@ export const DATA = {
 				"Computer Vision",
 				"Image Processing",
 			],
-			links: [],
+			links: [
+				{
+					type: "Hosting Soon...",
+					href: "#",
+					icon: <Icons.globe className="size-3" />,
+				}
+			],
 			image: "",
 			video: "videos/harry-potter-blanket.mp4",
 		},
