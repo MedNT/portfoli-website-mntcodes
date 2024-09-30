@@ -467,7 +467,7 @@ export const DATA = {
 			dates: "April 2020 - Jully 2020",
 			active: true,
 			description:
-				"AI-powered app that lets you control Instagram with facial gestures. Scroll with your eyes, pause with a gaze, and like posts with a smile for a hands-free, intuitive browsing experience.",
+				"Vanisher 🕵️‍♂️ makes you invisible on camera with a simple blanket! Inspired by Harry Potter's cloak, this AI-powered app uses advanced image processing to seamlessly cloak you in real-time. Perfect for fun, privacy, or just a magical touch!",
 			technologies: [
 				"Python",
 				"OpenCV",
