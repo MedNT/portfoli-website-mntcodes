@@ -247,7 +247,7 @@ export const DATA = {
 	projects: [
 		{
 			type: "public",
-			title: "VSCode Extention - WaterMyCode 💧",
+			title: "VSCode Extension - WaterMyCode 💧",
 			href: "https://marketplace.visualstudio.com/items?itemName=NaciriTaoufikMohamed.watermycode&ssr=false#review-details",
 			dates: "Sep 2024 - Present",
 			active: true,
