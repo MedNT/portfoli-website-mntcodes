@@ -32,7 +32,7 @@ export const DATA = {
 	navbar: [
 		{ href: "/", icon: HomeIcon, label: "Home" },
 		{
-			href: "https://www.terminal.mntcodes.com",
+			href: "https://terminal.mntcodes.com/",
 			icon: SquareTerminal,
 			label: "Terminal",
 		},
@@ -313,7 +313,7 @@ export const DATA = {
 			links: [
 				{
 					type: "Website",
-					href: "https://www.terminal.mntcodes.com",
+					href: "https://terminal.mntcodes.com/",
 					icon: <Icons.globe className="size-3" />,
 				},
 				{
