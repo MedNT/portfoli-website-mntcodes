@@ -1,5 +1,8 @@
+"use client";
+
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
+import Modal from "@/components/modal";
 import { ProjectCard } from "@/components/project-card";
 import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -9,12 +12,22 @@ import { CoolMode } from "@/components/ui/cool-mode";
 import SparklesText from "@/components/ui/sparkless-text";
 import { DATA } from "@/data/resume";
 import Markdown from "react-markdown";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { RainbowButton } from "@/components/ui/rainbow-button";
 
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
+	const [isModalOpen, setIsModalOpen] = useState(false);
+
+	const openModal = () => setIsModalOpen(true);
+	const closeModal = () => setIsModalOpen(false);
+
 	return (
 		<main className="flex flex-col min-h-[100dvh] space-y-10">
+			{/* Part 1 of the portfolio */}
+			{/* hello section */}
 			<section id="hero">
 				<div className="mx-auto w-full max-w-2xl space-y-8">
 					<div className="gap-2 flex justify-between">
@@ -47,6 +60,7 @@ export default function Page() {
 					</div>
 				</div>
 			</section>
+			{/* about section */}
 			<section id="about">
 				<BlurFade delay={BLUR_FADE_DELAY * 3}>
 					<h2 className="text-xl font-bold">About</h2>
@@ -57,6 +71,7 @@ export default function Page() {
 					</Markdown>
 				</BlurFade>
 			</section>
+			{/* work section */}
 			<section id="work">
 				<div className="flex min-h-0 flex-col gap-y-3">
 					<BlurFade delay={BLUR_FADE_DELAY * 5}>
@@ -84,6 +99,7 @@ export default function Page() {
 					))}
 				</div>
 			</section>
+			{/* education section */}
 			<section id="education">
 				<div className="flex min-h-0 flex-col gap-y-3">
 					<BlurFade delay={BLUR_FADE_DELAY * 7}>
@@ -107,6 +123,7 @@ export default function Page() {
 					))}
 				</div>
 			</section>
+			{/* skillz section */}
 			<section id="skills">
 				<div className="flex min-h-0 flex-col gap-y-3">
 					<BlurFade delay={BLUR_FADE_DELAY * 9}>
@@ -118,15 +135,16 @@ export default function Page() {
 								key={skill}
 								delay={BLUR_FADE_DELAY * 10 + id * 0.05}
 							>
-								<CoolMode>
-									<Badge key={skill}>{skill}</Badge>
-								</CoolMode>
+								<Badge key={skill}>{skill}</Badge>
 							</BlurFade>
 						))}
 						{/* And more chip */}
 						<BlurFade delay={BLUR_FADE_DELAY * 10 + 10 * 0.05}>
 							<Badge className="bg-white text-black border-black">
-								<a href="https://github.com/MedNT#skills">
+								<a
+									href="https://github.com/MedNT#skills"
+									target="_blank"
+								>
 									and more...
 								</a>
 							</Badge>
@@ -134,6 +152,9 @@ export default function Page() {
 					</div>
 				</div>
 			</section>
+
+			{/* Part 2 of the portfolio */}
+			{/* projects section */}
 			<section id="projects">
 				<div className="space-y-12 w-full py-12">
 					<BlurFade delay={BLUR_FADE_DELAY * 11}>
@@ -171,27 +192,30 @@ export default function Page() {
 									image={project.image}
 									video={project.video}
 									links={project.links}
+									preventOpening={
+										project.type === "private"
+											? openModal
+											: undefined
+									}
 								/>
 							</BlurFade>
 						))}
+
 						<a
 							target="_blank"
 							href="mailto:naciritaoufikmed@gmail.com"
+							className="col-span-2 sm:col-span-2 flex flex-col justify-center text-center my-7"
 						>
-							<Card className="flex flex-col justify-center text-center overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full w-full">
-								<BlurFade delay={BLUR_FADE_DELAY * 5}>
-									<h3 className="font-bold hover:underline">
-										Contact me for more <br /> interessting
-										projects
-									</h3>
-								</BlurFade>
-							</Card>
+							<RainbowButton>
+								Contact me for more exciting projects !
+							</RainbowButton>
 						</a>
 					</div>
 				</div>
 			</section>
 
-			<section id="hackathons">
+			{/* hackatons section */}
+			<section id="articles">
 				<div className="space-y-12 w-full py-12">
 					<BlurFade delay={BLUR_FADE_DELAY * 13}>
 						<div className="flex flex-col items-center justify-center space-y-4 text-center">
@@ -235,18 +259,19 @@ export default function Page() {
 								/>
 							</BlurFade>
 						))}
-						<a target="_blank" href="https://mntcode.substack.com/">
-							<Card className="flex flex-col justify-center text-center overflow-hidden border hover:shadow-lg transition-all duration-300 ease-out h-full w-full">
-								<BlurFade delay={BLUR_FADE_DELAY * 5}>
-									<h3 className="font-bold">
-										Read More
-									</h3>
-								</BlurFade>
-							</Card>
+						<a
+							target="_blank"
+							href="https://mntcode.substack.com/"
+							className="col-span-2 sm:col-span-2 flex flex-col justify-center text-center my-7"
+						>
+							<RainbowButton>
+								Read more here 🖱
+							</RainbowButton>
 						</a>
 					</div>
 				</div>
 			</section>
+			{/* contact section */}
 			<section id="contact">
 				<div className="grid items-center justify-center gap-4 px-4 text-center md:px-6 w-full py-12">
 					<BlurFade delay={BLUR_FADE_DELAY * 16}>
@@ -270,11 +295,20 @@ export default function Page() {
 								or
 								<a
 									target="_blank"
-									href="https://www.linkedin.com/in/mednt/"
+									href="mailto:naciritaoufikmed@gmail.com"
 									className="text-blue-500 hover:underline"
 								>
 									{" "}
 									Email{" "}
+								</a>
+								or even
+								<a
+									target="_blank"
+									href="https://wa.me/212637403791"
+									className="text-blue-500 hover:underline"
+								>
+									{" "}
+									Whatsapp{" "}
 								</a>
 								with any questions, and I’ll get back to you as
 								soon as I can.
@@ -283,6 +317,7 @@ export default function Page() {
 					</BlurFade>
 				</div>
 			</section>
+			<Modal isModalOpen={isModalOpen} closeModal={closeModal} />
 		</main>
 	);
 }

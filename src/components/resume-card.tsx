@@ -8,6 +8,7 @@ import { motion } from "framer-motion";
 import { ChevronRightIcon } from "lucide-react";
 import Link from "next/link";
 import React from "react";
+import { CoolMode } from "./ui/cool-mode";
 
 interface ResumeCardProps {
   logoUrl: string;
@@ -41,6 +42,7 @@ export const ResumeCard = ({
   return (
     <Link
       href={href || "#"}
+      target="_blank"
       className="block cursor-pointer"
       onClick={handleClick}
     >
@@ -55,6 +57,7 @@ export const ResumeCard = ({
             <AvatarFallback>{altText[0]}</AvatarFallback>
           </Avatar>
         </div>
+        <CoolMode>
         <div className="flex-grow ml-4 items-center flex-col group">
           <CardHeader>
             <div className="flex items-center justify-between gap-x-2 text-base">
@@ -104,6 +107,7 @@ export const ResumeCard = ({
             </motion.div>
           )}
         </div>
+        </CoolMode>
       </Card>
     </Link>
   );
