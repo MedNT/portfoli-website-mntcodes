@@ -29,7 +29,7 @@ export default function Page() {
 			{/* Part 1 of the portfolio */}
 			{/* hello section */}
 			<section id="hero">
-				<div className="mx-auto w-full max-w-2xl space-y-8">
+				<div className="mx-auto w-full max-w-2xl space-y-8 mt-5">
 					<div className="gap-2 flex justify-between">
 						<CoolMode>
 							<div className="flex-col flex flex-1 space-y-1.5">
