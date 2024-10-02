@@ -247,6 +247,39 @@ export const DATA = {
 	projects: [
 		{
 			type: "public",
+			title: "VSCode Extension - NoComments 👨‍💻 - AI Driven",
+			href: "https://marketplace.visualstudio.com/items?itemName=NaciriTaoufikMohamed.watermycode&ssr=false#review-details",
+			dates: "Oct 2024 - Present",
+			active: true,
+			description:
+				"NoComments is a Visual Studio Code extension designed to help developers effortlessly generate documentation comments using AI for their functions and methods. With just a click, you can ensure that your code is well-documented and easier to understand, eliminating the hassle of writing comments manually.",
+			technologies: [
+				"Node.js",
+				"Javascript",
+				"axios",
+				"ESlint",
+				"Prettier",
+				"TailwindCSS",
+				"Mocha",
+				"OpenAI"
+			],
+			links: [
+				{
+					type: "Website",
+					href: "https://marketplace.visualstudio.com/items?itemName=NaciriTaoufikMohamed.nocomments",
+					icon: <Icons.globe className="size-3" />,
+				},
+				{
+					type: "Source",
+					href: "https://github.com/MedNT/noComments",
+					icon: <Icons.github className="size-3" />,
+				},
+			],
+			image: "",
+			video: "/videos/nocomments.mp4",
+		},
+		{
+			type: "public",
 			title: "VSCode Extension - WaterMyCode 💧",
 			href: "https://marketplace.visualstudio.com/items?itemName=NaciriTaoufikMohamed.watermycode&ssr=false#review-details",
 			dates: "Sep 2024 - Present",
