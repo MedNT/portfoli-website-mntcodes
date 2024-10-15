@@ -15,6 +15,7 @@ import Markdown from "react-markdown";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { RainbowButton } from "@/components/ui/rainbow-button";
+import SubstackEmailCollect from "@/components/substackEmailCollect";
 
 const BLUR_FADE_DELAY = 0.04;
 
@@ -268,6 +269,10 @@ export default function Page() {
 						</a>
 					</div>
 				</div>
+				<center>
+					<SubstackEmailCollect />
+				</center>
+				
 			</section>
 			{/* contact section */}
 			<section id="contact">
