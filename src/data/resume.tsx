@@ -247,6 +247,38 @@ export const DATA = {
 	projects: [
 		{
 			type: "public",
+			title: `NPM Package: CNCA "create-next-custom-app"`,
+			href: "https://www.npmjs.com/package/create-next-custom-app",
+			dates: "Nov 2024 - Present",
+			active: true,
+			description:
+				"CLI tool designed to simplify the creation of Next.js applications with custom configurations. It allows developers to choose from a wide range of popular libraries and tools, streamlining the setup process without requiring manual configuration.",
+			technologies: [
+				"Node.js",
+				"Javascript",
+				"figlet",
+				"Chalk",
+				"Inquirer",
+				"Execa",
+				"Gradient-string",
+			],
+			links: [
+				{
+					type: "Website",
+					href: "https://www.npmjs.com/package/create-next-custom-app",
+					icon: <Icons.globe className="size-3" />,
+				},
+				{
+					type: "Source",
+					href: "https://github.com/MedNT/create-next-custom-app",
+					icon: <Icons.github className="size-3" />,
+				},
+			],
+			image: "",
+			video: "/videos/cnca.mp4",
+		},
+		{
+			type: "public",
 			title: "VSCode Extension - NoComments 👨‍💻 - AI Driven",
 			href: "https://marketplace.visualstudio.com/items?itemName=NaciriTaoufikMohamed.watermycode&ssr=false#review-details",
 			dates: "Oct 2024 - Present",
